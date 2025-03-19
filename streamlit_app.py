@@ -15,10 +15,8 @@ helpful_links = [
 st.title(":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
 st.write("Choose the fruits you want in you custom Smoothie!")
 
-#option = st.selectbox(
- #   "What is your favorite fruit?",
-  #  ("Banana", "Strawberries", "Peaches"),
-#)
+name_on_order = st.text_input("Name on Smoothie")
+st.write("The name on your Smoothie will be:", name_on_order)
 
 #st.write("Your favorite fruit is:", option)
 cnx = st.connection("snowflake")
@@ -60,5 +58,5 @@ st.text(smoothiefroot_response)
 # New section to display smoothiefroot nutrition information
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response.json())
-#sf_df = st.dataframe(data==smoothiefroot_response.json(), use_container_width=True)
+#st.text(smoothiefroot_response.json())
+sf_df = st.dataframe(data==smoothiefroot_response.json(), use_container_width=True)
